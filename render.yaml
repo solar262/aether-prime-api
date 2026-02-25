@@ -2,10 +2,13 @@ services:
   - type: web
     name: aether-prime-api
     env: node
+    plan: free
     buildCommand: npm install
-    startCommand: node index.js
+    startCommand: npm start
     envVars:
       - key: PORT
-        value: 3005
+        value: 10000
+      - key: STRIPE_SECRET_KEY
+        sync: false
       - key: SESSION_SECRET
         generateValue: true
